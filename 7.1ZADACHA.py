@@ -20,16 +20,15 @@ class Shop:
         return products
 
     def add(self, *products):
-        file = open(self.__file_name, 'a+')
         for product in products:
-
+            file = open(self.__file_name, 'a+')
             current_products = self.get_products()
             if product.name in current_products:
                 print(f'Продукт {product.name} уже есть в магазине')
                 file.close()
             else:
                 file.write(str(product) + '\n')
-        file.close()
+                file.close()
 
 
 
